@@ -1,0 +1,91 @@
+Dylan Klingensmith
+Period 2
+4/9/19
+AP CS A Practice Exam 2018
+
+import java.util.Random;
+
+public class FrogSimulation	{
+
+	//Establish attributes
+	private int goalDistance;
+	private int maxHops;
+	
+	//The FrogSimulation constructor creates a FrogSimulation object and initializes the goalDistance
+	//and maxHops fields
+	public FrogSimulation(int dist, int numHops)	{
+		
+		goalDistance = dist;
+		maxHops = numHops;
+	
+	}
+	
+	//The hopDistance method returns an integer representing the distance of one leap made by the frog
+	public int hopDistance()	{
+		
+		Random randomizer = new Random();
+		int leapDistance;
+		
+		leapDistance = randomizer.nextInt(20) + 1;
+		leapDistance -= 10;
+		
+		return leapDistance;
+		
+	}
+	
+	//The simulate method simulates the frog leaping, and returns true if the frog reaches or surpasses the 
+	//goal with a number of leaps equal to or less than the maximum number; otherwise, it returns false
+	public boolean simulate()	{
+		
+		//The distanceCovered variable holds the number of inches the frog has moved towards the goal
+		int distanceCovered;
+		
+		//The hopCount holds the number of hops the frog has made
+		int hopCount;
+		
+		while (distanceCovered >= 0 && distanceCovered < goalDistance && hopCount < maxHops)	{
+			
+			distanceCovered += hopDistance();
+			hopCount++;
+			
+		}
+		
+		if (distanceCovered >= goalDistance)	{
+			
+			return true;
+			
+		} else if (distanceCovered < 0)	{
+			
+			return false;
+			
+	    } else {
+			
+			return false;
+			
+		}
+		
+	}
+	
+	//The runSimulations method performs the simulate method @num times and returns the proportion of success
+	public double runSimulations(int num)	{
+		
+		//The successes variable holds the number of times the simulate method returns true
+		double successes = 0;
+		
+		for (int x = 0; x < num; x++)	{
+			
+			boolean passesGoal = simulate(24, 5);
+			
+			if (passessGoal)	{
+				
+				success++;
+				
+			}
+		
+		}
+		
+		return (successes/x);
+		
+	}
+
+}

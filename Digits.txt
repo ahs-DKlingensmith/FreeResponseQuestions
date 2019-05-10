@@ -1,0 +1,47 @@
+Dylan Klingensmith
+Period 2
+4/11/19
+Digits
+
+public class Digits	{
+
+	//Establish attributes
+	private ArrayList<int> digitsList;
+	
+	//The Digits constructor coverts the int to a String, converts each digit to an int, and stores them in digitslist
+	public Digits(int num)	{
+	
+		String numberString = Integer.toString(num);
+		
+		for (int x = 0; x < numberString.length(); x++)	{
+		
+			int digit = Character.getNumericValue(numberString.charAt(x));
+			digitsList.add(digit);
+		
+		}
+	
+	}
+	
+	//The isStrictlyIncreasing method returns whether or not the values in the digitsList array increase with each index
+	public boolean isStrictlyIncreasing()	{
+	
+		int holdDigit = -1;
+		boolean isIncreasing = true;
+		
+		for (int x = 0; x < digitsList.size(); x++)	{
+		
+			if (digitsList.get(x) <= holdDigit	{
+				
+				isIncreasing = false;
+				
+			}
+			
+			holdDigit = digitsList.get(x);
+		
+		}
+		
+		return isIncreasing;
+	
+	}
+	
+}

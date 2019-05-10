@@ -1,0 +1,87 @@
+Dylan Klingensmith
+Period 2
+5/2/19
+Random Chooser
+
+import java.util.Random;
+
+public class RandomStringChooser	{
+
+	//Establish attributes
+	private String[] wordArray;
+	private boolean[] returnedWords;
+	private Random randomizer = new Random();
+	
+	//The RandomStringChooser constructor accepts an array for wordArray
+	public RandomStringChooser(String[] words)	{
+	
+		wordArray = new String[words.length];
+		
+		for (int x = 0; x < wordArray.length; x++)	{
+			
+			wordArray[x] = words[x];
+			
+		}
+		
+		returnedWords = new boolean[words.length];
+		
+		for (int y = 0; y < returnedWords.length; y++)	{
+		
+			returnedWords[y] = true;
+			
+		}
+		
+	}
+	
+	//The getNext method returns a word that has not been returned before, or NONE if all have been returned
+	public String getNext()	{
+		
+		private int checkAvailable = 0;
+		
+		for (int x = 0; x < returnedWords.length; x++)	{
+		
+			if (returnedWords[x] = true)	{
+			
+				checkAvailable++;
+			
+			}
+		
+		}
+		
+		if (checkAvailable > 0)	{
+			
+			private String word;
+			private int randomIndex;
+			
+			do {
+				
+				randomIndex = randomizer.nextInt(wordArray,length);
+				word = wordArray[randomIndex];
+				
+			} while (returnedWords[randomIndex] == false);
+			
+			return word;
+		
+		} else {
+			
+			return "NONE";
+	
+	}
+	
+}
+
+public class RandomLetterChooser	{
+	
+	private String[] letterArray;
+	private String word;
+	
+	//The RandomLetterChooser constructor establishes a RandomLetterChooser object and returns a String array of the string's characters
+	public RandomLetterChooser(String str)	{
+		
+		word = str;
+		letterArray = getSingleLetters(word);
+		
+	}
+
+	
+}

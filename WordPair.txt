@@ -1,0 +1,80 @@
+Dylan Klingensmith
+Period 2
+4/10/19
+Word Pair
+
+import java.util.ArrayList;
+
+public class WordPair	{
+	
+	//Establish attributes
+	private String firstWord;
+	private String secondWord;
+	
+	//The WordPair constructor creates a WordPair and initializes the firstWord and secondWord attributes
+	public WordPair(String first, String second)	{
+		
+		firstWord = first;
+		secondWord = second;
+		
+	}
+	
+	//The getFirst method returns the firstWord
+	public String getFirst()	{
+		
+		return firstWord;
+		
+	}
+	
+	//The getSecond method returns the secondWord
+	public String getSecond()	{
+		
+		return second;
+		
+	}
+		
+}
+
+public class WordPairList	{
+
+	//Establish attributes
+	private ArrayList<WordPair> allPairs;
+	
+	//The wordPairList constructor adds pairs of words from the @words[] array to the allPairs list
+	public WordPairList(String[] words)	{
+		
+		for (int i = 0; i < words.length - 1; i++)	{
+			
+			for (int j = i + 1; j < words.length; j++)	{
+				
+				allPairs.add(new WordPair(words[i], words[j]));
+				
+			}
+			
+		}
+	
+    }
+
+	//The numMatches method returns the number of WordPair objects whose first and second words are identical
+	public int numMatches()	{
+		
+		//The matchingPairs variable holds the number of pairs with matching words
+	
+		for (int x = 0; x < allPairs.size(); x++)	{
+			
+			String word1 = allPairs.get(x).getFirst();
+			String word2 = allPairs.get(x).getSecond();
+			
+			if (word1.equals(word2)	{
+				
+				matchingWords++;
+				
+		}
+		
+		return matchingWords;
+	
+	}
+
+
+	
+}

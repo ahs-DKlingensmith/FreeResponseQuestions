@@ -1,0 +1,45 @@
+Dylan Klingensmith
+Period 2
+5/7/19
+Phrase Editor
+
+public class Phrase	{
+
+	//Establish attributes
+	private String currentPhrase;
+	
+	//The replaceNthOccurrence method replaces the index of the nth occurrence of the string str with the string repl
+	public void replaceNthOccurrence(String str, int n, String repl)	{
+	
+		private int index = findNthOccurrence(str, n);
+		
+		if (nthLocation != -1)	{
+			
+			currentPhrase = currentPhrase.substring(0, index - 1) + currentPhrase.substring(index + str.length());
+			currentPhrase = currentPhrase.substring(0, index - 1) + repl + currentPhrase.substring(index + repl.length());
+			
+		}		
+	
+	}
+	
+	//The findLastOccurrence method returns the index of the last occurrence of the string str
+	public int findLastOccurrence(String str)	{
+	
+		private int index;
+		
+		for (int x = 0; x < currentPhrase; x++)	{
+		
+			if (currentPhrase.substring(x, x + str.length() - 1))	{
+				
+				index = x;
+				
+			}
+		
+		}
+		
+		return index;
+	
+	}
+	
+	
+}

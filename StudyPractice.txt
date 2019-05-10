@@ -1,0 +1,43 @@
+Dylan Klingensmith
+Period 2
+4/11/19
+Study Practice
+
+public interface StudyPractice	{
+
+	String getProblem();
+	void nextProblem();
+	
+}
+
+public class MultPractice implements StudyPractice	{
+	
+	//Establish attributes
+	int num1;
+	int num2;
+	
+	//The MultPractice constructor accepts two integers for @num1 and @num2
+	public MultPractice(int n1, int n2)	{
+		
+		num1 = n1;
+		num2 = n2;
+		
+	}
+	
+	//The getProblem method returns a String format of a multiplication problem using @num1 and @num2
+	public String getProblem()	{
+	
+		String problem = num1 + " times " + num2;
+		return problem;
+		
+	}
+	
+	//The nextProblem method increments num2
+	public void nextProblem()	{
+		
+		num2++;
+		
+	}
+
+	
+}

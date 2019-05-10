@@ -1,0 +1,48 @@
+Dylan Klingensmith
+Period 2
+4/11/19
+Code Word Checker
+
+public interface StringChecker	{
+
+	//Returns true if str is valid
+	boolean isValid(String str);
+	
+}
+
+public class CodeWordChecker implements StringChecker	{
+
+	//Establish attributes
+	private int min;
+	private int max;
+	private String missing;
+	
+	//The CodeWordChecker constructor stores the requirements to check the String and determine its validity
+	public CodeWordChecker(int mi, int ma, String mis)	{
+		
+		min = mi;
+		max = ma;
+		missing = mis;
+
+	}
+	
+	//The isValid method checks the initialized String and determines its validity
+	public boolean isValid(String str)	{
+	
+		if (str.indexOf(missing) != -1)	{
+			
+			return false;
+		
+		} else if (str.length() < min || str.length() > max)	{
+			
+			return false;
+			
+		} else {
+			
+			return true;
+			
+		}
+	
+	}
+	
+}
