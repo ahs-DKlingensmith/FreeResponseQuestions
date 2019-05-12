@@ -1,0 +1,48 @@
+Dylan Klingensmith
+Period 1
+3/12/19
+Crossword 
+
+public class Crossword  {
+
+    //The toBeLabeled method returns true if the indexes above and left of the indicated index 
+    //in blackSquares are true
+    
+    public boolean toBeLabeled(int r, int c, boolean[][] blackSquares)  {
+    
+        if (blackSquares[r-1][c] == true && blackSquares[r][c-1] == true)   {
+        
+            return true;
+        
+        } else {
+        
+            return false;
+            
+        }
+    
+    }
+    
+    public Crossword(boolean[][] blackSquares)  {
+    
+        puzzle = new Square[blackSquares.length][blackSquares[0].length];
+        
+        private int labeledSquares = 0;
+        
+        for (int r = 0; r < puzzle.length; r++) {
+        
+            for (int c = 0; r < puzzle[0].length; c++)  {
+            
+                if (this.toBeLabeled(r, c, blackSquares)    {
+                
+                    puzzle[r][c] = new Square(false, labeledSquares);
+                    labeledSquares++;
+                    
+                } else {
+                
+                    puzzle[r][c] = new Square(true, 0);
+                    
+                }
+    
+    }
+
+}

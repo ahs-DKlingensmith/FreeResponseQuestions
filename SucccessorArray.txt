@@ -1,0 +1,56 @@
+Dylan Klingensmith
+Period 2
+5/12/19
+Successor Array
+
+public class Successors {
+
+    //The findPosition method returns a Position object representing the indexes of the integer num
+    found in the intArr array
+    
+    public static Position findPosition(int num, int[][] intArr)    {
+    
+        for (int r = 0; r < intArr.length; r++) {
+        
+            for (int c = 0; c < intArr[0].length; c++)  {
+            
+                if (intArr[r][c] == num)    {
+                
+                  Position numPosition = new Position(r, c);
+                  return numPosition;
+                  
+                }
+                
+             }
+             
+         }
+    
+    }
+    
+    public static Position[][] getPositionArray(int[][] intArr) {
+    
+        Position[][] successorArray = new Position[intArr.length][intArr[0].length];
+        
+        for (int successorRow = 0; successorRow < successorArray.length; successorRow++)    {
+            for (int successorCol = 0; successorCol < successorArray[0].length; successorCol++) {
+            
+                for (int originalRow = 0; originalRow < intArr.length; originalRow++)   {
+                    for (int originalCol = 0; originalCol < intArr[0].length; originalCol++)    {
+                    
+                        if (intArr[successorRow][successorCol] == intArr[originalRow][originalCol]) {
+                        
+                            successorArray[successorRow][successorCol] = new Position(originalRow, originalCol);
+                            
+                        }
+         
+                 }
+                 
+            }
+            
+         }
+    
+    }
+    
+    }
+
+}
